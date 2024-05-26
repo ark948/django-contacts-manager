@@ -1,0 +1,5 @@
+accounts app for authentication
+contacts app for managing user's contacts (main functionality)
+pages app (basic web viwe - very simple - nothing special - maybe a little bootstrap)
+
+accounts app must use custom user model and token based authentication.

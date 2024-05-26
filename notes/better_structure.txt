@@ -1,2 +1,3 @@
 main project folder could be named config, core, or server
 collect all apps in apps directory next to main project folder
+split each app into front (for html views) and api (for api endpoints)

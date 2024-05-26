@@ -8,4 +8,10 @@
 > mkdir templates
 > add templates dir to TEMPLATES in settings.py
 > rename pages/apps.py name var to apps.name
-- task 1: test first pages view to check connectivity
+- task 1: test first pages view to check connectivity (done)
+- problem: don't remember much of django itself (i only read the beginner book)
+- solution: i will develop the api first, and then read the django professional book and continue on.
+
+task 2: add a dedicated app for user authentication and add a custom user model
+- for this, it is imperative to not run migrations, before creating our own custom user model.
+- refer to authentication.txt
