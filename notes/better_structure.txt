@@ -1,0 +1,2 @@
+main project folder could be named config, core, or server
+collect all apps in apps directory next to main project folder
