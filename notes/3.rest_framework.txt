@@ -1,0 +1,17 @@
+rest api has three steps in process:
+    urls.py for url routes
+    serializers.py to transform data into JSON
+    views.py to apply logic to each API endpoint
+
+by default django has AllowAny permission to enable ease of use in local development
+
+> pip install 
+> add to installed_app
+> add rest_framework config to settings.py
+> udpate project urls.py to include api app urls (contacts.urls or apps.contacts.urls?) (ok, apps.contacts.urls works)
+- contacts api will be added to contacts app itself
+- we are doing this because contacts is our main functionality
+- if we had multiple apis, we could add a dedicated api app and include are app's api into it (i'll do this later)
+> add serializers.py to contacts.api
+> add views
+> bind views to url routes

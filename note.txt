@@ -25,3 +25,5 @@ task 3: add contacts app
 task 4: add rest api 
 > pip install djangorestframework
 > add it to installed_apps
+> add rest_framework config var to settings.py
+continue on rest framework note...
