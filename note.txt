@@ -14,4 +14,10 @@
 
 task 2: add a dedicated app for user authentication and add a custom user model
 - for this, it is imperative to not run migrations, before creating our own custom user model.
-- refer to authentication.txt
+- refer to authentication.txt (done)
+
+task 3: add contacts app
+> mkdir apps/contacts
+> python manage.py startapp contacts apps/contacts
+- modify apps.py (name)
+> add contact model

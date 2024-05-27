@@ -1,0 +1,9 @@
+> added a contacts app in apps folder
+> modified apps.py
+> added it to installed_apps
+> created Contact model
+- migrations need to be created.
+> python manage.py makemigrations contacts
+> pythom manage.py migrate
+commit
+- need to test contacts model in admin interface.
