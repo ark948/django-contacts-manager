@@ -21,3 +21,7 @@ task 3: add contacts app
 > python manage.py startapp contacts apps/contacts
 - modify apps.py (name)
 > add contact model
+
+task 4: add rest api 
+> pip install djangorestframework
+> add it to installed_apps

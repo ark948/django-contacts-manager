@@ -7,3 +7,7 @@
 > pythom manage.py migrate
 commit
 - need to test contacts model in admin interface.
+> update contacts/admin.py
+> test the model in admin interface
+> add some tests.
+> python manage.py test -v 2 (verbosity level 2)
