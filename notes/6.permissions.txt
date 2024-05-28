@@ -1,0 +1,11 @@
+permissions can be applied to different layers and levels (such as project level, view level, and model level)
+
+project level permissions (host of configurations)
+this is DEFAULT_PERMISSION_CLASSES in settings.py, rest_framework config var
+
+right now it is set to AllowAny, we should update this
+
+we will switch this to IsAuthenticated so only logged in or authenticated users can view the api.
+> update settings.py
+> turn on the server, logout and test the api view with a logged out user (done)
+> 

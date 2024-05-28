@@ -33,3 +33,6 @@ refer to note
 
 task 6: configure and compile static files
 refer to note
+
+task 7: adding permissions
+refer to note
