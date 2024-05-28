@@ -30,3 +30,6 @@ continue on rest framework note...
 
 task 5: configure CORS
 refer to note
+
+task 6: configure and compile static files
+refer to note

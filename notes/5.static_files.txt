@@ -1,0 +1,13 @@
+Django by itself does not server static files.
+so they need to configured (compiled) and served in production by production server.
+
+> create a static directory
+> mkdir static
+- since git does not keep track of empty folders, we should add a .keep file to static directory
+> install whitenoise package
+> pip install WhiteNoise
+> udpate requirements.txt
+- whitenoise needs to be added to three locations installed_apps (above staticfiles), whitenoise middleware above common middleware, and staticfiles_storage var
+> update settings.py
+> run compile command
+> python manage.py collectstatic
