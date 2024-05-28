@@ -36,3 +36,7 @@ refer to note
 
 task 7: adding permissions
 refer to note
+adding login and logout is also in this
+
+IMPORTANT CHANGE: using generic classes all the time is a bad idea. i will re-write serializer and views from scratch
+current state: fix the issue with contact object creation endpoint and then move on to chapter 8 user authentication

@@ -8,4 +8,47 @@ right now it is set to AllowAny, we should update this
 we will switch this to IsAuthenticated so only logged in or authenticated users can view the api.
 > update settings.py
 > turn on the server, logout and test the api view with a logged out user (done)
-> 
+- need to make some new users to test the if regular users have access
+> use admin interface for this
+- testuser-hello123*
+
+- to add login and logout
+> project urls needs to updated
+> added the api-auth route
+> turn on the server and use the browsable api to login with testuser
+
+- view-level permissions
+> import permissions from rest_framework
+> add permissions_classes to a view
+> add permissions.<permissionName> to permissions_classes
+- django rest_framework builtin classes are not suited for our project, we should implement our own custom permission
+
+- in our project, we want to restrict both contact list and contact detail to the creator of those contact items that is logged in
+- so we only need to create one custom permission
+
+- by default all permissions inherit from BasePermission
+has_permission method works on list views, while detail views use both has_permission and has_object_permission
+IMPORTANT: it is always advised to modify both methods because they default to true unless set explicitly.
+
+PROBLEM: we don't want the list to be visible to anyone but the owner
+we can't use ListAPIView (still thinking on this)
+i edited the list view to only list the contact items created by the current user, need to test it.
+IT WORKS, but with a problem, any user who can login will be able to create an item with even other users (IMPORTANT ERROR)
+
+now getting back to custom permissions, add the custom permission to permissions_classes of view (add to both of them)
+
+use admin interface to add some items with testuser and then test the views.
+------------------------------------------------------------------------------------
+problem 1: display all necessary fields. (fixed in serializers.py - id field should not be displayed)
+problem 2: owner field must be readonly (user must not even have such field, serializers must add it automatically)
+some sort of create method in serializers needs to be modified
+progress is being made.
+contacts list is working ok. only logged in users can view THEIR own list.
+BUT contacts detail is available to anyone.
+IsOwner permission class must be used for Contact Detail, somehow.
+changed the get_queryset of the detail view like the list view, exactly the same way.
+seems to be working.
+let's see what happens if we also add IsOwner permission.
+appears to be working.
+need to check this with an api client such as httpie or curl to be sure.
+everything seems to be working.
