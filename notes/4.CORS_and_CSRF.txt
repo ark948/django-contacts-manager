@@ -1,0 +1,23 @@
+Cross Origin Resource Sharing
+
+APIs are developed to interact with different applications, servers and domains.
+this brings up potential security issues.
+
+CORS requires the web server to include specific HTTP headers that allow for a client to have access to this api and its resources.
+
+this could be done by the help of a middleware.
+
+we can use a third party package 'django-cors-headers'
+
+> pip install django-cors-headers
+> update requirements.txt
+> add corsheaders to installed_apps after rest_framework
+> add corsheaders middleware to MIDDLEWARE (after the session middleware)
+> and create a cors_allowed_origins list var
+
+we should also configure CSRF protection now.
+django does have CSRF protection by default, but in rest architecture, this may not be available in frontend like react.
+so we should allow specific origins for csrf with a config var in settings.py 
+add the CSRF_TRUSTED_ORIGINS right after CORS_ORIGIN_WHITELIST
+
+Now our backend is complete and capable of communicating with any front-end that uses port 3000. (this could be updated)

@@ -27,3 +27,6 @@ task 4: add rest api
 > add it to installed_apps
 > add rest_framework config var to settings.py
 continue on rest framework note...
+
+task 5: configure CORS
+refer to note

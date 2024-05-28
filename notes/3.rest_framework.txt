@@ -15,3 +15,4 @@ by default django has AllowAny permission to enable ease of use in local develop
 > add serializers.py to contacts.api
 > add views
 > bind views to url routes
+[IMPORTANT] serializers must be tweaked on larger projects for performance reason.

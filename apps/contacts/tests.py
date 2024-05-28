@@ -16,3 +16,7 @@ class ContactsTests(TestCase):
         self.assertEqual(self.contact.title, 'friend')
         self.assertEqual(self.contact.owner.username, 'testuser')
         self.assertEqual(self.contact.owner, self.user)
+
+    def test_contact_api(self):
+        # this is just to check if test module works fine
+        self.assertEqual(1, 1)
