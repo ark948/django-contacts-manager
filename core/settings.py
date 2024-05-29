@@ -43,11 +43,17 @@ INSTALLED_APPS = [
     'apps.pages',
     'apps.accounts.apps.AccountsConfig',
     'apps.contacts.apps.ContactsConfig',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
 ]
 
 REST_FRAMEWORK = {  # new
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
     ],
 }
 

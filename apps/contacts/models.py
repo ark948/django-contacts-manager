@@ -1,6 +1,7 @@
 from django.db import models
 from apps.accounts.models import CustomUser
 from django.conf import settings
+from django.urls import reverse
 
 # Create your models here.
 
@@ -13,7 +14,7 @@ class Contact(models.Model):
     address = models.TextField("Address", null=True, blank=True)
     date_created = models.DateTimeField("Created on", auto_now_add=True)
     last_modified = models.DateField("Modified on", auto_now=True)
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='contacts')
 
     def __str__(self):
         return f"<Contact for {self.owner} - ID:{self.id}>"
@@ -22,5 +23,5 @@ class Contact(models.Model):
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
     
-    # def get_absolute_url(self):
-    #     pass
+    def get_absolute_url(self):
+        return reverse("contact_api:contact_detail", kwargs={"pk": self.pk})

@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('apps.pages.front.urls')),
     path('api/v1/', include("apps.contacts.api.urls")),
     path('api-auth/', include("rest_framework.urls")),
+    path("api/v1/dj-rest-auth/", include("dj_rest_auth.urls")),
 ]

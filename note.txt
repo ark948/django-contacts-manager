@@ -12,7 +12,7 @@
 - problem: don't remember much of django itself (i only read the beginner book)
 - solution: i will develop the api first, and then read the django professional book and continue on.
 
-task 2: add a dedicated app for user authentication and add a custom user model
+task 2: add a dedicated app for user authentication and add a custom user model (this is actually called authorization)
 - for this, it is imperative to not run migrations, before creating our own custom user model.
 - refer to authentication.txt (done)
 
@@ -39,4 +39,7 @@ refer to note
 adding login and logout is also in this
 
 IMPORTANT CHANGE: using generic classes all the time is a bad idea. i will re-write serializer and views from scratch
-current state: fix the issue with contact object creation endpoint and then move on to chapter 8 user authentication
+current state: fix the issue with contact object creation endpoint and then move on to chapter 8 user authentication.
+
+task 8: authentication (registration)
+

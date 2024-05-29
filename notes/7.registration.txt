@@ -1,0 +1,21 @@
+we'll be using token based authentication. (other options are basic authentication and session authentication)
+
+> add authentication config var to rest_framework var in settings.py:
+add both session authentication and basic authentication
+(so far, nothing has changed actually, since django uses both of these by default, we just added them explicitly)
+
+why both?
+because they serve different purposes. session authentication for the ability to login and logout
+and basic for pass session id in http headers
+
+> now, implementing token authentication
+> update settings.py and replace basic with TokenAuthentication
+> include a built in django app to generate tokens, authtoken to installed_apps
+> run migrate (because installed_apps var has been modified)
+> check admin interface to see if tokens has been added.
+we will use two third party apps: dj-rest-auth, django-allauth
+
+login and logout and password reset will come with dj-rest-auth package.
+> pip install dj-rest-auth
+> add to installed_apps
+> update main urls.py to inlcude dj_rest_auth urls
