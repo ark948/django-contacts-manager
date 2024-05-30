@@ -19,3 +19,18 @@ login and logout and password reset will come with dj-rest-auth package.
 > pip install dj-rest-auth
 > add to installed_apps
 > update main urls.py to inlcude dj_rest_auth urls
+
+> add django-allauth
+> pip install django-allauth (the book version is 0.48.0, if install the latest version an error will be raised while trying to migrate)
+- (go on with this older version for now, i will try to update it later)
+> several new stuffs must be added to installed_apps
+    • django.contrib.sites
+    • allauth
+    • allauth.account
+    • allauth.socialaccount
+    • dj_rest_auth.registration
+> TEMPLATES config var needs to be updated. django-allauth added to it after context processor
+> EMAIL_BACKEND must be added (to confirm email)
+> SITE_ID also must be added (built-in sites frameworks requires this, we only have one site, so it's 1)
+> migrate the database: python manage.py migrate
+> add routes to main urls.py for registration
