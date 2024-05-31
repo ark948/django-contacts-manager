@@ -42,4 +42,6 @@ IMPORTANT CHANGE: using generic classes all the time is a bad idea. i will re-wr
 current state: fix the issue with contact object creation endpoint and then move on to chapter 8 user authentication.
 
 task 8: authentication (registration)
+not fully done
 
+task 9: viewsets and routers (if necessary)

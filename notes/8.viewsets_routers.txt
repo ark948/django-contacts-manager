@@ -1,0 +1,4 @@
+viewsets and routers are an extra layer of abstraction to allow developers to write less code.
+viewsets combine different views to a single class, and routers generate url endpoints automatically.
+
+> add a user serializer to accounts/api/serializers.py (book put the code in posts app)
