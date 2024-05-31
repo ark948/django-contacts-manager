@@ -1,0 +1,8 @@
+we will be using environs package
+
+> pip install environs[django] (this raised error, environs provides no extra 'django')
+skipping for now
+
+> three statements need to be added to settings.py (to the top of)
+> create an .env file to root project directory and immediately add it to git ignore file
+commit

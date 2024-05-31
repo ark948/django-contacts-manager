@@ -47,3 +47,5 @@ not fully done
 task 9: viewsets and routers (if necessary)
 
 task 10: adding schema and documentation
+
+task 11: adding production environment
