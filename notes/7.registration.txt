@@ -34,3 +34,19 @@ login and logout and password reset will come with dj-rest-auth package.
 > SITE_ID also must be added (built-in sites frameworks requires this, we only have one site, so it's 1)
 > migrate the database: python manage.py migrate
 > add routes to main urls.py for registration
+created account testuser1-hello123* (no email was provided)
+creating a new one with email: testuser2 (raises error)
+tried to change the order of installed_apps to match the book precisely.
+raised error 'coudn't load manifest staticfiles.json''.
+fixed it by removing the staticfiles folder entirely and running collectstatic command again.
+attempting to register a new user with email.
+stil get the same error: "AttributeError at /api/v1/dj-rest-auth/registration/
+                        'EmailAddressManager' object has no attribute 'is_verified'"
+can't process further, until this issue is resolved.
+attempting to copy this project and change 'dedicated app folder' to normal, problem was not related to this.
+uninstalled dj-rest-auth and django-allauth and re-installed latest versions of them.
+added a middleware fo allauth.
+needed to apply migrations
+now email while sign up works, but confirming emails won't work. raises error ImproperlyConfigured error.
+
+this section is considered finish. i will fix this issue later by using django-allauth alone or something else entirely.

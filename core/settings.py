@@ -39,17 +39,19 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'rest_framework',
-    'corsheaders',
-    'dj_rest_auth',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+
+    "rest_framework",
+    "corsheaders",
+    "rest_framework.authtoken",
+    "allauth",  # new
+    "allauth.account",  # new
+    "allauth.socialaccount",  # new
+    "dj_rest_auth",
     'dj_rest_auth.registration',
-    'apps.pages',
+
+    'apps.pages.apps.PagesConfig',
     'apps.accounts.apps.AccountsConfig',
     'apps.contacts.apps.ContactsConfig',
-    'rest_framework.authtoken',
 ]
 
 REST_FRAMEWORK = {  # new
@@ -72,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 CORS_ORIGIN_WHITELIST = (
@@ -79,7 +82,7 @@ CORS_ORIGIN_WHITELIST = (
     "http://localhost:8000",
 )
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"] # React default port
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]  # React default port
 
 ROOT_URLCONF = 'core.urls'
 
@@ -94,15 +97,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.request',
+                "django.template.context_processors.request",
             ],
         },
     },
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-SITE_ID = 1
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
@@ -153,8 +153,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / "static"] # new
-STATIC_ROOT = BASE_DIR / "staticfiles" # new
+STATICFILES_DIRS = [BASE_DIR / "static"]  # new
+STATIC_ROOT = BASE_DIR / "staticfiles"  # new
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
@@ -163,3 +163,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+SITE_ID = 1
