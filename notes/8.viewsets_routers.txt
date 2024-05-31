@@ -1,4 +1,10 @@
 viewsets and routers are an extra layer of abstraction to allow developers to write less code.
 viewsets combine different views to a single class, and routers generate url endpoints automatically.
 
-> add a user serializer to accounts/api/serializers.py (book put the code in posts app)
+> add a user serializer to accounts/api/serializers.py (book put the code in posts app) in serializers.py
+> add a viewset class that will inherit from viewset (import from rest_framework) in views.py
+> in accounts/urls.py create a router.
+> import and register the viewsets with router
+> add the router.urls to urlpatterns variable
+- note (app_name var was removed)
+> also links in index page must be updated
