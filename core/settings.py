@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",  # new
     "dj_rest_auth",
     'dj_rest_auth.registration',
+    'drf_spectacular',
 
     'apps.pages.apps.PagesConfig',
     'apps.accounts.apps.AccountsConfig',
@@ -62,6 +63,14 @@ REST_FRAMEWORK = {  # new
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Contacts Manager",
+    "DESCRIPTION": "A simple contacts manager app with django and DRF",
+    "VERSION": "1.0.0",
+    # OTHER SETTINGS
 }
 
 MIDDLEWARE = [

@@ -45,3 +45,5 @@ task 8: authentication (registration)
 not fully done
 
 task 9: viewsets and routers (if necessary)
+
+task 10: adding schema and documentation

@@ -1,0 +1,22 @@
+OpenAPI standard will be used.
+
+package to use: drf-spectacular for generating openapi 3 shcema
+
+> pip install drf-spectacular
+> add app
+> register it within rest_framework config var
+> add metadata to a new config var in settings.py for drf-spectacular
+> to generate the shcema file as a standalone file, we can use the management command.
+> python manage.py spectacular --file shcema.yml
+
+a better approach is to serve a dynamic form of schema as a url route right in the project. this way it can be re-generated everytime api changes.
+this could be added directly to project level urls.py
+
+a documentation is more human friendly.
+there are two tools supported by drf-spectacular to generate documentation, Redoc and SwaggerUI.
+
+first Redoc:
+in project level urls.py import SpectacularRedocView and add it to patterns
+
+now SwaggerUI:
+the process is the same, just import it in project level urls.py and add it to patterns
