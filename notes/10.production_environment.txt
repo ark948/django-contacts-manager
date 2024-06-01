@@ -6,3 +6,42 @@ skipping for now
 > three statements need to be added to settings.py (to the top of)
 > create an .env file to root project directory and immediately add it to git ignore file
 commit
+django defaults to local production. (debug is true)
+debug must be true for local development and false for production
+also if there is any difficulty loading the environment variables, we want debug to default to false to be extra secure.
+
+> add DEBUG=True to env file
+> edit the debug value in settings.py to read from env file
+
+> add secret_key
+> to generate a secure secret_key, i will use the following python script:
+> python -c "import secrets; print(secrets.token_urlsafe())"
+> copy and paste into .env file, under the name SECRET_KEY
+> edit settings.py to read secret_key from settings.py
+
+> test if everything works fine
+
+> next is allowed_hosts
+> this config var must contain the host/domain names that this django project will server.
+> local host must be added for development (book added heroku too)
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
+
+> next is database. we want to be able to switch to postgresql for production
+> book requires a package called 'dj-database-url' that was installed with environs[django]
+> not sure, but i think i must install this manually
+> pip install dj-database-url - successfully installed it
+> update settings.py > DATABASES config var
+> now add database url to env file
+
+> next is static files
+(i have already done this part, but i am going to repeat this, intentionally)
+> mkdir static - done
+> create a .keep file in static directory
+> pip install whitenoise
+> needs three config vars in settings.py
+- one above django.contribstaticfiles in installed_apps
+- whitenoise middleware above CommonMiddleware in middlewares (it's there)
+- staticfiles_dirs and static_root and staticfiles_storage (it's there)
+> final step, run collectstatic command to compile all static files and folders into one lcoation for deployment
+
+final chapter is done, commit
