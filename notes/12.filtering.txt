@@ -1,0 +1,18 @@
+filtering is the process of selecting a certain subset of records from the entire queryset.
+
+> i have been doing this all along, with returing only the contacts if logged in user
+
+> the simplest way to achieve this, is to override the get_queryset method of generic views.
+
+> adding filter (generic filtering) to browsable api
+> add global filter backend to rest_framework config var
+this can also be set in view-level
+
+IMPORTANT: for some reason, drf is asking to install django-filter library (not at the beginning of the tutorial)
+
+> pip install django-filter
+> add to app
+> (now add the backend globally or to class)
+> add filterset_fields = ['category', 'in_stock'] to view for simple equality based filtering
+> also add filter_backneds to view
+this topic can be further discussed, but for now, this suffices

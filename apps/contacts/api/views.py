@@ -4,10 +4,12 @@ from apps.contacts.api.serializers import ContactSerializer
 from apps.contacts.api.permissions import IsOwner
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, filters
 
 class ContactsList(generics.ListCreateAPIView):
     serializer_class = ContactSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title']
 
     def get_queryset(self):
         user = self.request.user

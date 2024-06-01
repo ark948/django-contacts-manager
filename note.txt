@@ -56,3 +56,8 @@ pagination, filtering (with django-filter), API throttling, caching, hyperlinks
 let's add pagination next
 
 task 12: pagination
+done
+
+task 13: filtering, (what is it?)
+
+HUGE PROBLEM DETECTED: while i was trying to fix the email problem, somehow, my django version was downgraded to 3
