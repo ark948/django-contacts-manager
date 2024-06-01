@@ -1,0 +1,14 @@
+if using generic views or viewsets, pagination will be performed automatically.
+there are different styles of pagination provided by drf:
+LimitOffsetPagination, PageNumberPagination, StandardResultsSetPagination
+
+> add the pagination config var to REST_FRAMEWORK config var in settings.py
+> pagination can also be modified in view-level
+
+> testing...
+> works, now trying PageNumberPagination, works fine
+- difference between these two is that LimitOffsetPagination uses the specified number of records to paginate the results.
+if we choose page_size 3 in LimitOffsetPagination, the pages will be offset of 3, 6, 9 and ...
+
+> PageNumberPagination is ok for our needs.
+done commit

@@ -49,3 +49,10 @@ task 9: viewsets and routers (if necessary)
 task 10: adding schema and documentation
 
 task 11: adding production environment
+
+other tasks that book will not cover:
+pagination, filtering (with django-filter), API throttling, caching, hyperlinks
+
+let's add pagination next
+
+task 12: pagination
